@@ -2,10 +2,9 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    style="@style/size_2"
     tools:context=".DetailUserActivity">
-    
+
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/avatar_detail_user"
         android:layout_marginTop="40dp"
@@ -34,9 +33,8 @@
         app:layout_constraintBottom_toTopOf="@+id/avatar_detail_user"
         app:layout_constraintTop_toBottomOf="@id/avatar_detail_user"
         app:layout_constraintVertical_bias="0.0"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
-    
+        style="@style/size_1"/>
+
     <TextView
         android:id="@+id/txttitk"
         android:text="@string/titikdua"
@@ -45,13 +43,11 @@
         app:layout_constraintHorizontal_bias="0.05"
         app:layout_constraintStart_toEndOf="@+id/txt_username"
         app:layout_constraintTop_toTopOf="@id/txt_username"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        style="@style/size_1"/>
 
     <TextView
         android:id="@+id/username_detail"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        style="@style/size_1"
         android:text="@string/user"
         android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
@@ -66,9 +62,7 @@
         android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="@id/txt_username"
         app:layout_constraintTop_toBottomOf="@id/txt_username"
-
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        style="@style/size_1"/>
 
     <TextView
         android:id="@+id/txt_titk2"
@@ -76,8 +70,7 @@
         app:layout_constraintStart_toStartOf="@+id/txttitk"
         app:layout_constraintTop_toTopOf="@id/txt_nama"
         android:textColor="@color/black"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        style="@style/size_1"/>
 
     <TextView
         android:id="@+id/name_detail"
@@ -85,8 +78,7 @@
         app:layout_constraintStart_toStartOf="@+id/username_detail"
         app:layout_constraintTop_toTopOf="@+id/txt_titk2"
         android:textColor="@color/black"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        style="@style/size_1"/>
 
     <TextView
         android:id="@+id/txt_location"
@@ -95,8 +87,7 @@
         app:layout_constraintTop_toBottomOf="@+id/txt_nama"
         android:layout_marginTop="10dp"
         android:textColor="@color/black"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        style="@style/size_1"/>
 
     <TextView
         android:id="@+id/txt_titk3"
@@ -112,8 +103,7 @@
         app:layout_constraintTop_toTopOf="@+id/txt_location"
         android:textColor="@color/black"
         android:text="@string/location"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        style="@style/size_1"/>
 
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tab_layout"
@@ -126,8 +116,7 @@
         app:layout_constraintTop_toBottomOf="@id/txt_location"
         app:layout_constraintVertical_bias="0.040"
         app:tabTextColor="@color/white"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        style="@style/size_3"/>
 
 
     <androidx.viewpager.widget.ViewPager

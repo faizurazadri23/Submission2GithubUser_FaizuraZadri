@@ -2,8 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    style="@style/size_2"
     tools:context=".MainActivity">
 
     <TextView
@@ -11,8 +10,7 @@
         android:layout_centerHorizontal="true"
         android:text="@string/selamat_datang_di_github"
         android:textSize="18sp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+       style="@style/size_1"/>
 
 
     
@@ -36,8 +34,7 @@
         android:layout_marginTop="20dp"
         android:iconifiedByDefault="false"
         android:queryHint="@string/user"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        style="@style/size_1"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyc_searchuser"
@@ -46,6 +43,5 @@
         android:layout_marginRight="10dp"
         android:layout_marginLeft="10dp"
         android:padding="20dp"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        style="@style/size_2"/>
 </RelativeLayout>

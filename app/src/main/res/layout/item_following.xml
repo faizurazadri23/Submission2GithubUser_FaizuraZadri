@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/size_3"
     android:orientation="horizontal"
     android:padding="8dp">
     
     <ProgressBar
         android:id="@+id/progressbarFollowing"
         android:visibility="gone"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        style="@style/size_1"/>
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/avatar_following"
@@ -24,7 +23,6 @@
         android:layout_gravity="center_vertical"
         android:paddingRight="16dp"
         android:text="@string/username_following"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        style="@style/size_1"/>
 
 </LinearLayout>
