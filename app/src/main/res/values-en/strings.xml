@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Github User</string>
+    <string name="username_followers">Username Followers</string>
+    <string name="username_following">Username Following</string>
+    <string name="user">User</string>
+    <string name="title_follower">Followers</string>
+    <string name="title_following">Following</string>
+    <string name="search_user">Search User</string>
+    <string name="change_language">Change language</string>
+    <string name="exit">Exit</string>
+
+    <string name="selamat_datang_di_github">Welcome To Github</string>
+    <string name="github_user">Github User</string>
+    <string name="titikdua">:</string>
+    <string name="username">Username</string>
+    <string name="name">Name</string>
+    <string name="location">Location</string>
+    <string name="progress_dialog">Please Wait...</string>
+    <string name="detail_user">Detail User</string>
+
+</resources>
