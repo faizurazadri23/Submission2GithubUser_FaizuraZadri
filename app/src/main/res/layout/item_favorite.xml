@@ -4,33 +4,26 @@
     style="@style/size_3"
     android:padding="8dp">
 
-    <ProgressBar
-        android:id="@+id/progressbarFollowing"
-        style="@style/size_1"
-        android:visibility="gone"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1" />
+
 
     <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/avatar_following"
+        android:id="@+id/avatar_favorite"
         android:layout_width="55dp"
         android:layout_height="55dp"
         android:layout_gravity="center_horizontal"
         android:scaleType="centerCrop"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintRight_toLeftOf="@+id/username_following" />
+        app:layout_constraintRight_toLeftOf="@+id/username_favorite"
+        app:layout_constraintVertical_bias="1" />
 
     <TextView
-        android:id="@+id/username_following"
+        android:id="@+id/username_favorite"
         style="@style/size_1"
         android:layout_gravity="center_vertical"
         android:layout_marginLeft="20dp"
         android:padding="16dp"
-        android:paddingRight="16dp"
-        android:text="@string/username_following"
+        android:text="@string/username_followers"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/avatar_following" />
+        app:layout_constraintStart_toEndOf="@+id/avatar_favorite" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

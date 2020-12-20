@@ -17,17 +17,11 @@ public class FollowerModel {
         return masuk;
     }
 
-    public void setMasuk(String masuk) {
-        this.masuk = masuk;
-    }
 
     public String getUrl() {
         return url;
     }
 
-    public void setUrl(String url) {
-        this.url = url;
-    }
 
     public int getId() {
         return id;

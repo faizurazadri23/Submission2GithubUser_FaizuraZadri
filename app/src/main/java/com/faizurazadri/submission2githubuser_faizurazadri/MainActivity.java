@@ -94,6 +94,7 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<ResponseUserModel> call, Throwable t) {
+                tampilProgressbar(false);
                 Toast.makeText(getApplicationContext(), "Permintaan Gagal " + t.getMessage(), Toast.LENGTH_LONG).show();
             }
         });
@@ -123,6 +124,12 @@ public class MainActivity extends AppCompatActivity {
             moveTaskToBack(true);
             finish();
             System.exit(0);
+        }else if (item.getItemId() == R.id.favorite){
+            Intent favorite = new Intent(MainActivity.this, FavoriteActivity.class);
+            startActivity(favorite);
+        }else if(item.getItemId() == R.id.pengaturan){
+            Intent settings = new Intent(MainActivity.this, SettingActivity.class);
+            startActivity(settings);
         }
 
         return super.onOptionsItemSelected(item);

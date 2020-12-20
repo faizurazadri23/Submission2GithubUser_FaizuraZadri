@@ -29,7 +29,7 @@ public class AdapterFollowers extends RecyclerView.Adapter<AdapterFollowers.View
     @NonNull
     @Override
     public ViewHolderFollowers onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(context).inflate(R.layout.item_followers, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_followers, parent, false);
         return new ViewHolderFollowers(view);
     }
 
@@ -46,7 +46,7 @@ public class AdapterFollowers extends RecyclerView.Adapter<AdapterFollowers.View
         return dataFollower.size();
     }
 
-    public class ViewHolderFollowers extends RecyclerView.ViewHolder {
+    public static class ViewHolderFollowers extends RecyclerView.ViewHolder {
 
         private TextView username;
         private ImageView avatar;

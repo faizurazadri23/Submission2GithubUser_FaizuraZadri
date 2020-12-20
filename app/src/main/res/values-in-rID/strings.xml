@@ -18,4 +18,6 @@
     <string name="location">Lokasi</string>
     <string name="progress_dialog">Mohon Menunggu...</string>
     <string name="detail_user">Rinci Pengguna</string>
+    <string name="settings">Pengaturan</string>
+    <string name="favorite">Favorit</string>
 </resources>

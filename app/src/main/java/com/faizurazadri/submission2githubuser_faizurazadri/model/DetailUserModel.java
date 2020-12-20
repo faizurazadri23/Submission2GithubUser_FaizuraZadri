@@ -1,8 +1,11 @@
 package com.faizurazadri.submission2githubuser_faizurazadri.model;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import com.google.gson.annotations.SerializedName;
 
-public class DetailUserModel {
+public class DetailUserModel{
 
     @SerializedName("login")
     private String masuk;
@@ -27,6 +30,8 @@ public class DetailUserModel {
 
     @SerializedName("location")
     private String location;
+
+
 
     public String getMasuk() {
         return masuk;
@@ -91,4 +96,5 @@ public class DetailUserModel {
     public void setLocation(String location) {
         this.location = location;
     }
+
 }
