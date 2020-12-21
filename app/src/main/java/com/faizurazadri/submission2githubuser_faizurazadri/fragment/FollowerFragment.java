@@ -20,11 +20,13 @@ import com.faizurazadri.submission2githubuser_faizurazadri.adapter.AdapterUsers;
 import com.faizurazadri.submission2githubuser_faizurazadri.model.FollowerModel;
 import com.faizurazadri.submission2githubuser_faizurazadri.model.UserModel;
 import com.faizurazadri.submission2githubuser_faizurazadri.retrofit.ApiClient;
+import com.faizurazadri.submission2githubuser_faizurazadri.retrofit.ApiService;
 
 import org.parceler.Parcels;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -78,14 +80,13 @@ public class FollowerFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        DetailUserActivity detailUserActivity = (DetailUserActivity) getActivity();
-        Bundle bundle = detailUserActivity.getIntent().getBundleExtra(AdapterUsers.EXTRA_DATA);
-        datauser = Parcels.unwrap(bundle.getParcelable(AdapterUsers.USER_DATA));
-
         recyclerViewFollower = view.findViewById(R.id.rv_follower);
         recyclerViewFollower.setLayoutManager(new LinearLayoutManager(view.getContext()));
 
-        Call<List<FollowerModel>> request = ApiClient.getApiService().getDataFollowerUser(datauser.getMasuk());
+        UserModel userModel = Objects.requireNonNull(getActivity().getIntent().getParcelableExtra("DATA_USER"));
+
+
+        Call<List<FollowerModel>> request = ApiClient.getApiService().getDataFollowerUser(Objects.requireNonNull(userModel).getMasuk());
         request.enqueue(new Callback<List<FollowerModel>>() {
             @Override
             public void onResponse(Call<List<FollowerModel>> call, Response<List<FollowerModel>> response) {

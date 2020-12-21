@@ -26,6 +26,7 @@ import org.parceler.Parcels;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -77,14 +78,11 @@ public class FollowingFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        DetailUserActivity detailUserActivity = (DetailUserActivity) getActivity();
-        Bundle bundle = detailUserActivity.getIntent().getBundleExtra(AdapterUsers.EXTRA_DATA);
-        userModel = Parcels.unwrap(bundle.getParcelable(AdapterUsers.USER_DATA));
-
         recyclerViewFollowing =view.findViewById(R.id.rv_following);
         recyclerViewFollowing.setLayoutManager(new LinearLayoutManager(view.getContext()));
+        UserModel userModel = Objects.requireNonNull(getActivity()).getIntent().getParcelableExtra("DATA_USER");
 
-        Call<List<FollowingModel>> listCall = ApiClient.getApiService().getDataFollowingUser(userModel.getMasuk());
+        Call<List<FollowingModel>> listCall = ApiClient.getApiService().getDataFollowingUser(Objects.requireNonNull(userModel).getMasuk());
         listCall.enqueue(new Callback<List<FollowingModel>>() {
             @Override
             public void onResponse(Call<List<FollowingModel>> call, Response<List<FollowingModel>> response) {

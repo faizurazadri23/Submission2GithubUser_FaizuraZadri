@@ -8,6 +8,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 import com.faizurazadri.submission2githubuser_faizurazadri.model.DetailUserModel;
+import com.faizurazadri.submission2githubuser_faizurazadri.model.UserModel;
 
 import java.util.ArrayList;
 
@@ -47,7 +48,7 @@ public class UserHelper {
             database.close();
     }
 
-    public Cursor DataAll(){
+    public Cursor queryAll(){
         return database.query(DATABASE_TABLE,
                 null,
                 null,
@@ -67,8 +68,8 @@ public class UserHelper {
         ,null);
     }
 
-    public ArrayList<DetailUserModel> getDataUser(){
-        ArrayList<DetailUserModel> detailUserModelArrayList = new ArrayList<>();
+    public ArrayList<UserModel> getDataUser(){
+        ArrayList<UserModel> detailUserModelArrayList = new ArrayList<>();
         Cursor cursor = database.query(DATABASE_TABLE, null,
                 null,
                 null,
@@ -77,10 +78,10 @@ public class UserHelper {
                 USERNAME + " ASC",
                 null);
         cursor.moveToFirst();
-        DetailUserModel detailUserModel;
+        UserModel detailUserModel;
         if (cursor.getCount() > 0){
             do {
-                detailUserModel = new DetailUserModel();
+                detailUserModel = new UserModel();
                 detailUserModel.setId(cursor.getInt(cursor.getColumnIndexOrThrow(ID)));
                 detailUserModel.setMasuk(cursor.getString(cursor.getColumnIndexOrThrow(USERNAME)));
                 detailUserModel.setUrl(cursor.getString(cursor.getColumnIndexOrThrow(AVATAR)));

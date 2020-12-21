@@ -7,18 +7,15 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.os.Bundle;
 
 import com.faizurazadri.submission2githubuser_faizurazadri.adapter.AdapterFavoriteUser;
-import com.faizurazadri.submission2githubuser_faizurazadri.db.GithubUserDatabase;
 import com.faizurazadri.submission2githubuser_faizurazadri.db.UserHelper;
-import com.faizurazadri.submission2githubuser_faizurazadri.model.DetailUserModel;
-import com.faizurazadri.submission2githubuser_faizurazadri.model.FavoriteDao;
+import com.faizurazadri.submission2githubuser_faizurazadri.model.UserModel;
 
 import java.util.ArrayList;
 
 public class FavoriteActivity extends AppCompatActivity {
 
-    RecyclerView recyclerViewFavorite;
     private UserHelper userHelper;
-    private ArrayList<DetailUserModel> detailUserModels = new ArrayList<>();
+    private ArrayList<UserModel> detailUserModels = new ArrayList<>();
     private AdapterFavoriteUser adapterFavoriteUser;
 
     @Override

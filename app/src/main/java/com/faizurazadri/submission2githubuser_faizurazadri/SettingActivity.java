@@ -9,14 +9,12 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
-import android.widget.CompoundButton;
 import android.widget.Switch;
 import android.widget.Toast;
 
 import com.faizurazadri.submission2githubuser_faizurazadri.receiver.MyReceiver;
 
 import java.util.Calendar;
-import java.util.Set;
 
 public class SettingActivity extends AppCompatActivity {
 
@@ -62,8 +60,8 @@ public class SettingActivity extends AppCompatActivity {
     private void setReminder(Context applicationContext) {
         Intent intent = new Intent(applicationContext, MyReceiver.class);
         Calendar calendar = Calendar.getInstance();
-        calendar.set(calendar.HOUR_OF_DAY, 19);
-        calendar.set(Calendar.MINUTE, 0);
+        calendar.set(calendar.HOUR_OF_DAY, 11);
+        calendar.set(Calendar.MINUTE, 22);
         calendar.set(Calendar.SECOND,0);
 
         AlarmManager alarmManager = (AlarmManager) applicationContext.getSystemService(Context.ALARM_SERVICE);

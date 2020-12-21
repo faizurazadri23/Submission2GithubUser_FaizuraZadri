@@ -2,7 +2,6 @@ package com.faizurazadri.submission2githubuser_faizurazadri.adapter;
 
 import android.content.Context;
 import android.content.Intent;
-import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,13 +13,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.faizurazadri.submission2githubuser_faizurazadri.DetailUserActivity;
-import com.faizurazadri.submission2githubuser_faizurazadri.DetailUserGithubActivity;
 import com.faizurazadri.submission2githubuser_faizurazadri.R;
-import com.faizurazadri.submission2githubuser_faizurazadri.model.DetailUserModel;
-import com.faizurazadri.submission2githubuser_faizurazadri.model.FavoriteModel;
 import com.faizurazadri.submission2githubuser_faizurazadri.model.UserModel;
-
-import org.parceler.Parcels;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,14 +22,14 @@ import java.util.List;
 public class AdapterFavoriteUser extends RecyclerView.Adapter<AdapterFavoriteUser.ViewHolderAdapterFavorite> {
 
 
-    List<DetailUserModel> userModels;
+    List<UserModel> userModels;
     Context context;
 
     public AdapterFavoriteUser(Context context) {
         this.context = context;
     }
 
-    public void setUserModels(ArrayList<DetailUserModel> detailUserModelArrayList){
+    public void setUserModels(ArrayList<UserModel> detailUserModelArrayList){
         this.userModels = detailUserModelArrayList;
     }
 
@@ -54,7 +48,10 @@ public class AdapterFavoriteUser extends RecyclerView.Adapter<AdapterFavoriteUse
                 .into(holder.avatar);
 
         holder.itemView.setOnClickListener(v -> {
-
+            UserModel detailUserModel = userModels.get(position);
+            Intent intent =new Intent(context, DetailUserActivity.class);
+            intent.putExtra("DATA_USER", detailUserModel);
+            v.getContext().startActivity(intent);
         });
     }
 

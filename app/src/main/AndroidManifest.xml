@@ -5,6 +5,7 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.SET_ALARM" />
     <uses-permission android:name="android.permission.ACCESS_NOTIFICATION_POLICY" />
+    <uses-permission android:name="com.faizurazadri.submission2githubuser_faizurazadri.NOTIFICATION" />
 
     <permission
         android:name="com.faizurazadri.submission2githubuser_faizurazadri.READ_DATABASE"
@@ -20,7 +21,19 @@
         android:roundIcon="@mipmap/logo_github"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.DayNight.DarkActionBar">
-        <activity android:name=".DetailUserGithubActivity"></activity>
+        <receiver
+            android:name=".receiver.MyReceiver"
+            android:enabled="true"
+            android:exported="true"></receiver>
+
+        <provider
+            android:name=".provider.MyContentProvider"
+            android:authorities="com.faizurazadri.submission2githubuser_faizurazadri"
+            android:enabled="true"
+            android:exported="true"
+            android:readPermission="com.faizurazadri.submission2githubuser_faizurazadri.READ_DATABASE"
+            android:writePermission="com.faizurazadri.submission2githubuser_faizurazadri.WRITE_DATABASE" />
+
         <activity
             android:name=".SettingActivity"
             android:label="@string/settings"
@@ -40,7 +53,6 @@
         <activity android:name=".MainActivity" />
         <activity
             android:name=".DetailUserActivity"
-            android:label="@string/detail_user"
             android:parentActivityName=".MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"

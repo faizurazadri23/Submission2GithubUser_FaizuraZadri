@@ -51,11 +51,10 @@ public class AdapterUsers extends RecyclerView.Adapter<AdapterUsers.ViewHolderUs
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                UserModel userModel1 = userModels.get(position);
                 Intent moveDetail= new Intent(context, DetailUserActivity.class);
-                Bundle data = new Bundle();
-                data.putParcelable(USER_DATA, Parcels.wrap(userModels.get(position)));
-                moveDetail.putExtra(EXTRA_DATA, data);
-                context.startActivity(moveDetail);
+                moveDetail.putExtra("DATA_USER", userModel1);
+                v.getContext().startActivity(moveDetail);
             }
         });
 
